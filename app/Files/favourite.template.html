@@ -1,0 +1,13 @@
+<span class="glyphicon" 
+[ngClass]="{
+    'glyphicon-star-empty': !isFavourite,
+    'glyphicon-star': isFavourite
+}"
+
+(click)="onClick()">
+</span>
+
+<button class="btn btn-primary" [class.active]="isFavourite" [ngStyle]="{backgroundColor: canSave ? 'blue': 'grey', color: canSave ? 'white': 'black', fontWeight: canSave ? 'bold': normal}">Submit
+</button>
+
+<img [src]="imgageUrl" /> 
