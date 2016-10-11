@@ -13,6 +13,7 @@ import { OnInit } from 'angular2/core'
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
 import { AlbumsComponent } from './Albums/albums.component'
 import { ContactComponent } from './Contact/contact.component'
+import { NavBarComponent } from './Navbar/navbar.component'
 
 
 
@@ -27,40 +28,11 @@ import { ContactComponent } from './Contact/contact.component'
     selector: 'my-app',
     template: `
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a [routerLink]="['Albums']">Albums</a></li>
-                <li><a [routerLink]="['Contact']">Contact</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
-
-
-
-<router-outlet></router-outlet>
-
-
-        
+                <navbar></navbar>
+                <router-outlet></router-outlet>
+                    
     `,
-    directives: [
+    directives: [NavBarComponent,
                  ROUTER_DIRECTIVES],
 
     pipes: [],

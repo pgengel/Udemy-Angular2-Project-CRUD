@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/filter', './Services/HttpPost/post.service', 'angular2/http', 'angular2/router', './Albums/albums.component', './Contact/contact.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/filter', './Services/HttpPost/post.service', 'angular2/http', 'angular2/router', './Albums/albums.component', './Contact/contact.component', './Navbar/navbar.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, post_service_1, http_1, router_1, albums_component_1, contact_component_1;
+    var core_1, post_service_1, http_1, router_1, albums_component_1, contact_component_1, navbar_component_1;
     var AppComponent;
     return {
         setters:[
@@ -33,6 +33,9 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
             },
             function (contact_component_1_1) {
                 contact_component_1 = contact_component_1_1;
+            },
+            function (navbar_component_1_1) {
+                navbar_component_1 = navbar_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -57,8 +60,8 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\n<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <!-- Brand and toggle get grouped for better mobile display -->\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\n            aria-expanded=\"false\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"#\">Brand</a>\n        </div>\n\n        <!-- Collect the nav links, forms, and other content for toggling -->\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <ul class=\"nav navbar-nav\">\n                <li><a [routerLink]=\"['Albums']\">Albums</a></li>\n                <li><a [routerLink]=\"['Contact']\">Contact</a></li>\n            </ul>\n        </div>\n        <!-- /.navbar-collapse -->\n    </div>\n    <!-- /.container-fluid -->\n</nav>\n\n\n\n<router-outlet></router-outlet>\n\n\n        \n    ",
-                        directives: [
+                        template: "\n\n                <navbar></navbar>\n                <router-outlet></router-outlet>\n                    \n    ",
+                        directives: [navbar_component_1.NavBarComponent,
                             router_1.ROUTER_DIRECTIVES],
                         pipes: [],
                         providers: [post_service_1.PostService, http_1.HTTP_PROVIDERS]
